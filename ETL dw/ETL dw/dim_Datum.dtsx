@@ -1,0 +1,462 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/27/2019 2:07:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-90D2HI0"
+  DTS:CreatorName="DESKTOP-90D2HI0\Semir"
+  DTS:DTSID="{FA182FB0-596A-4563-96E2-3275015CA896}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="dim_Datum"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{ED2ADED9-6E38-40AD-B882-248A5E16F9BD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CD703F36-136E-4C70-8BDC-4A8B57799149}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\onlineshopDW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="onlineshopDW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_datum]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\onlineshopDW.Connections[OleDbConnection]"
+                  connectionManagerID="{85A7345D-8394-4B73-B1AE-8E246F0908DD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.onlineshopDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].Columns[dan]"
+                      cachedDataType="i4"
+                      cachedName="dan"
+                      externalMetadataColumnId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[Dan]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[dan]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].Columns[mjesec]"
+                      cachedDataType="i4"
+                      cachedName="mjesec"
+                      externalMetadataColumnId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[Mjesec]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[mjesec]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].Columns[godina]"
+                      cachedDataType="i4"
+                      cachedName="godina"
+                      externalMetadataColumnId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[Godina]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[godina]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].Columns[NarudzbaID]"
+                      cachedDataType="i4"
+                      cachedName="NarudzbaID"
+                      externalMetadataColumnId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[DatumAltKey]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[NarudzbaID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].Columns[Datum]"
+                      cachedDataType="dbDate"
+                      cachedName="Datum"
+                      externalMetadataColumnId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[PuniDatum]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[Datum]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[DatumKey]"
+                      dataType="i4"
+                      name="DatumKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[DatumAltKey]"
+                      dataType="i4"
+                      name="DatumAltKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[Dan]"
+                      dataType="i4"
+                      name="Dan" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[Mjesec]"
+                      dataType="i4"
+                      name="Mjesec" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[Godina]"
+                      dataType="i4"
+                      name="Godina" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input].ExternalColumns[PuniDatum]"
+                      dataType="dbDate"
+                      name="PuniDatum" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\onlineshopDW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\onlineshopDW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\onlineshopDW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\onlineshopDW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\web_shop"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="web_shop"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select N.NarudzbaID, Day(Datum) as 'dan', MONTH(N.Datum) as 'mjesec', YEAR(N.Datum) as 'godina', N.Datum
+from Narudzba as N join NarudzbaProizvoda as NP
+on N.NarudzbaID = NP.NarudzbaID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\web_shop.Connections[OleDbConnection]"
+                  connectionManagerID="{DE8D9C53-9B70-42B5-9E13-38282C68226B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.web_shop]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[NarudzbaID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[NarudzbaID]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[NarudzbaID]"
+                      name="NarudzbaID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[dan]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[dan]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[dan]"
+                      name="dan"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[mjesec]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[mjesec]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[mjesec]"
+                      name="mjesec"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[godina]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[godina]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[godina]"
+                      name="godina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[Datum]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[Datum]"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].Columns[Datum]"
+                      name="Datum"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[NarudzbaID]"
+                      dataType="i4"
+                      name="NarudzbaID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[dan]"
+                      dataType="i4"
+                      name="dan" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[mjesec]"
+                      dataType="i4"
+                      name="mjesec" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[godina]"
+                      dataType="i4"
+                      name="godina" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output].ExternalColumns[Datum]"
+                      dataType="dbDate"
+                      name="Datum" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[NarudzbaID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[NarudzbaID]"
+                      name="NarudzbaID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[dan]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[dan]"
+                      name="dan" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[mjesec]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[mjesec]"
+                      name="mjesec" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[godina]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[godina]"
+                      name="godina" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[Datum]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[Datum]"
+                      name="Datum" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\onlineshopDW.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\web_shop.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="183,57" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Data Flow Task\web_shop"
+          TopLeft="212,21" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Data Flow Task\onlineshopDW"
+          TopLeft="210,127" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="279.25,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\onlineshopDW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\web_shop">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

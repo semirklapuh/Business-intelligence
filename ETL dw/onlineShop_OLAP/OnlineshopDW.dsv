@@ -1,0 +1,221 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a0e05c10-b86f-489d-8e66-6d53ed6c1a05" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>OnlineshopDW</ID>
+  <Name>OnlineshopDW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>OnlineshopDW</DataSourceID>
+  <Schema>
+    <xs:schema id="OnlineshopDW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="OnlineshopDW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="fe2e4527-b528-4c1d-adcc-6d07cbaf2355">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_dim_dostava" msprop:design-time-name="f86cf946-ae02-4744-96f2-58d051b1fa7d" msprop:DbTableName="dim_dostava" msprop:FriendlyName="dim_dostava" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DostavaKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="6a9f10ee-e3bf-4ad8-9409-2daafe4eb2fb" msprop:DbColumnName="DostavaKey" msprop:FriendlyName="DostavaKey" type="xs:int" />
+                  <xs:element name="DostavaAltKey" msprop:design-time-name="6c578d99-5361-4164-8c27-bd72ca02cea9" msprop:DbColumnName="DostavaAltKey" msprop:FriendlyName="DostavaAltKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="NacinDostave" msprop:design-time-name="9e3c4a5c-9164-4e77-a1d0-3e228d547f88" msprop:DbColumnName="NacinDostave" msprop:FriendlyName="NacinDostave" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="StatusDostave" msprop:design-time-name="dac6d8de-d3ec-4f6e-955f-62b58644cea1" msprop:DbColumnName="StatusDostave" msprop:FriendlyName="StatusDostave" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dim_kupac" msprop:design-time-name="1a7b77d3-3faf-43e7-8dee-d9dc6c46c67b" msprop:DbTableName="dim_kupac" msprop:FriendlyName="dim_kupac" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="KupacKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="1711d14d-91e1-4fa2-9a78-f51c80152ea1" msprop:DbColumnName="KupacKey" msprop:FriendlyName="KupacKey" type="xs:int" />
+                  <xs:element name="KupacAltKey" msprop:design-time-name="e983be42-aea8-4ae9-bd15-09c1faa25bee" msprop:DbColumnName="KupacAltKey" msprop:FriendlyName="KupacAltKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="KorisnickoIme" msprop:design-time-name="b17d2822-8237-4ac3-9fa0-828f7e852add" msprop:DbColumnName="KorisnickoIme" msprop:FriendlyName="KorisnickoIme" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Email" msprop:design-time-name="354c8d0c-4131-46b9-868f-ac50ac72d1ed" msprop:DbColumnName="Email" msprop:FriendlyName="Email" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Telefon" msprop:design-time-name="f333b340-94fa-41b9-aa1a-4b15ca4224a6" msprop:DbColumnName="Telefon" msprop:FriendlyName="Telefon" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="13" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Spol" msprop:design-time-name="8148edd4-c61b-4be7-8fe9-caa1ef21c8e3" msprop:DbColumnName="Spol" msprop:FriendlyName="Spol" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ImePrezime" msprop:design-time-name="8e902111-e255-40cb-98f9-d60c5d09045c" msprop:DbColumnName="ImePrezime" msprop:FriendlyName="ImePrezime" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dim_lokacija" msprop:design-time-name="8154e722-7836-4554-ba59-322598176a1b" msprop:DbTableName="dim_lokacija" msprop:FriendlyName="dim_lokacija" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="LokacijaKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="315bc4cf-63ed-494e-b8b1-c75232e7c191" msprop:DbColumnName="LokacijaKey" msprop:FriendlyName="LokacijaKey" type="xs:int" />
+                  <xs:element name="LokacijaAltKey" msprop:design-time-name="4c09a6a1-428b-488c-a2c2-f64af86717ca" msprop:DbColumnName="LokacijaAltKey" msprop:FriendlyName="LokacijaAltKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="NazivGrada" msprop:design-time-name="8468d0fc-3f23-4e08-9055-0fdc72933d43" msprop:DbColumnName="NazivGrada" msprop:FriendlyName="NazivGrada" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PostanskiBroj" msprop:design-time-name="339fd541-5884-4d57-a9a9-2eb6f9f04c09" msprop:DbColumnName="PostanskiBroj" msprop:FriendlyName="PostanskiBroj" type="xs:int" minOccurs="0" />
+                  <xs:element name="NazivDrzave" msprop:design-time-name="311de9bf-2b40-43fc-9cfd-77b7f4814d5c" msprop:DbColumnName="NazivDrzave" msprop:FriendlyName="NazivDrzave" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dim_proizvod" msprop:design-time-name="b30e7551-6d96-4d02-949f-1bb576d34d5d" msprop:DbTableName="dim_proizvod" msprop:FriendlyName="dim_proizvod" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ProizvodKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="ccf08273-4b60-4e2b-acd4-07353c077fae" msprop:DbColumnName="ProizvodKey" msprop:FriendlyName="ProizvodKey" type="xs:int" />
+                  <xs:element name="ProizvodAltKey" msprop:design-time-name="5e81c169-7d37-4540-b296-2030351ccbde" msprop:DbColumnName="ProizvodAltKey" msprop:FriendlyName="ProizvodAltKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="Naziv" msprop:design-time-name="3088a796-1c8d-4061-ae51-4658c0e523ab" msprop:DbColumnName="Naziv" msprop:FriendlyName="Naziv" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="KategorijaProizvoda" msprop:design-time-name="88e1935b-7011-4f60-8d2c-7186084a003e" msprop:DbColumnName="KategorijaProizvoda" msprop:FriendlyName="KategorijaProizvoda" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Proizvodjac" msprop:design-time-name="0252a672-0ae9-4445-a7da-b4b4b95600f9" msprop:DbColumnName="Proizvodjac" msprop:FriendlyName="Proizvodjac" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_fact_Faktura" msprop:design-time-name="85cc9212-7e5c-4dc5-9958-f8f5b9e9abea" msprop:DbTableName="fact_Faktura" msprop:FriendlyName="fact_Faktura" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FakturaKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="03e17b4e-3ace-4da3-b84c-3fcecc5712dd" msprop:DbColumnName="FakturaKey" msprop:FriendlyName="FakturaKey" type="xs:int" />
+                  <xs:element name="LokacijaKey" msprop:design-time-name="738894f7-58ed-4d5c-80d5-ca2121e4cbe4" msprop:DbColumnName="LokacijaKey" msprop:FriendlyName="LokacijaKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="DostavaKey" msprop:design-time-name="41786b5c-0956-4b55-a19f-0feb78510ca7" msprop:DbColumnName="DostavaKey" msprop:FriendlyName="DostavaKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="ProizvodKey" msprop:design-time-name="0d93df4c-4d04-4677-a377-ac84d1f5e0c5" msprop:DbColumnName="ProizvodKey" msprop:FriendlyName="ProizvodKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="KupacKey" msprop:design-time-name="0049ca23-505e-4238-86aa-69fc217c7703" msprop:DbColumnName="KupacKey" msprop:FriendlyName="KupacKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="Cijena" msprop:design-time-name="0c2f347b-5837-41b2-a517-2e7e9389c764" msprop:DbColumnName="Cijena" msprop:FriendlyName="Cijena" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Kolicina" msprop:design-time-name="3d534968-b833-41b9-b626-9beca8e208f6" msprop:DbColumnName="Kolicina" msprop:FriendlyName="Kolicina" type="xs:int" minOccurs="0" />
+                  <xs:element name="KolicinaProdatihProizvoda" msprop:design-time-name="8f6c2ec8-3b21-496d-ae22-3bc488499119" msprop:DbColumnName="KolicinaProdatihProizvoda" msprop:FriendlyName="KolicinaProdatihProizvoda" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dim_dostava" />
+          <xs:field xpath="DostavaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_dim_kupac_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dim_kupac" />
+          <xs:field xpath="KupacKey" />
+        </xs:unique>
+        <xs:unique name="dbo_dim_lokacija_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dim_lokacija" />
+          <xs:field xpath="LokacijaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_dim_proizvod_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dim_proizvod" />
+          <xs:field xpath="ProizvodKey" />
+        </xs:unique>
+        <xs:unique name="dbo_fact_Faktura_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_fact_Faktura" />
+          <xs:field xpath="FakturaKey" />
+        </xs:unique>
+        <xs:keyref name="FK_Lokacija" refer="dbo_dim_lokacija_Constraint1">
+          <xs:selector xpath=".//dbo_fact_Faktura" />
+          <xs:field xpath="LokacijaKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_Proizvod" refer="dbo_dim_proizvod_Constraint1">
+          <xs:selector xpath=".//dbo_fact_Faktura" />
+          <xs:field xpath="ProizvodKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_Kupac" refer="dbo_dim_kupac_Constraint1">
+          <xs:selector xpath=".//dbo_fact_Faktura" />
+          <xs:field xpath="KupacKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_Dostava" refer="Constraint1">
+          <xs:selector xpath=".//dbo_fact_Faktura" />
+          <xs:field xpath="DostavaKey" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <OnlineshopDW xmlns="" />
+  </Schema>
+</DataSourceView>
